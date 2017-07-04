@@ -1,0 +1,60 @@
+[13-Jun-2016 09:09:53 America/Guatemala] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/technology/public_html/ST/connection.php on line 3
+[13-Jun-2016 09:09:56 America/Guatemala] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/technology/public_html/ST/connection.php on line 3
+[13-Jun-2016 09:10:06 America/Guatemala] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home/technology/public_html/ST/connection.php on line 3
+[08-Aug-2016 08:00:50 America/Guatemala] PHP Parse error:  syntax error, unexpected 'mysql_query' (T_STRING) in /home/technology/public_html/ST/cxc_abonos.php on line 159
+[08-Aug-2016 08:00:55 America/Guatemala] PHP Parse error:  syntax error, unexpected 'mysql_query' (T_STRING) in /home/technology/public_html/ST/cxc_abonos.php on line 159
+[08-Aug-2016 08:21:38 America/Guatemala] PHP Parse error:  syntax error, unexpected 'mysql_query' (T_STRING) in /home/technology/public_html/ST/cxc_abonos.php on line 159
+[08-Aug-2016 09:32:01 America/Guatemala] PHP Parse error:  syntax error, unexpected 'mysql_query' (T_STRING) in /home/technology/public_html/ST/cxc_abonos.php on line 159
+[09-Aug-2016 23:12:13 America/Guatemala] PHP Parse error:  syntax error, unexpected 'mysql_query' (T_STRING) in /home/technology/public_html/ST/cxc_abonos.php on line 159
+[10-Aug-2016 00:00:06 America/Guatemala] PHP Parse error:  syntax error, unexpected 'mysql_query' (T_STRING) in /home/technology/public_html/ST/cxc_abonos.php on line 159
+[10-Aug-2016 12:03:04 America/Guatemala] PHP Parse error:  syntax error, unexpected 'mysql_query' (T_STRING) in /home/technology/public_html/ST/cxc_abonos.php on line 159
+[10-Aug-2016 12:03:41 America/Guatemala] PHP Parse error:  syntax error, unexpected 'mysql_query' (T_STRING) in /home/technology/public_html/ST/cxc_abonos.php on line 159
+[12-Aug-2016 08:04:11 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 79
+[12-Aug-2016 08:04:11 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 80
+[12-Aug-2016 08:04:11 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 81
+[12-Aug-2016 08:04:11 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 82
+[12-Aug-2016 08:04:56 America/Guatemala] PHP Parse error:  syntax error, unexpected 'mysql_query' (T_STRING) in /home/technology/public_html/ST/cxc_abonos.php on line 159
+[12-Aug-2016 08:48:09 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 79
+[12-Aug-2016 08:48:09 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 80
+[12-Aug-2016 08:48:09 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 81
+[12-Aug-2016 08:48:09 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 82
+[02-Sep-2016 11:38:53 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 79
+[02-Sep-2016 11:38:53 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 80
+[02-Sep-2016 11:38:53 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 81
+[02-Sep-2016 11:38:53 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 82
+[06-Sep-2016 12:10:56 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_provee.php on line 104
+[06-Sep-2016 12:15:18 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_provee.php on line 104
+[06-Sep-2016 12:16:45 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_provee.php on line 104
+[06-Sep-2016 13:21:51 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_provee.php on line 104
+[08-Sep-2016 12:43:40 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_provee.php on line 104
+[08-Sep-2016 13:15:28 America/Guatemala] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, null given in /home/technology/public_html/ST/rep_egreso_conta.php on line 43
+[08-Sep-2016 13:16:35 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_provee.php on line 104
+[09-Sep-2016 14:58:20 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 59
+[09-Sep-2016 15:20:26 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_provee.php on line 104
+[09-Sep-2016 15:59:27 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_comision_totales.php on line 78
+[09-Sep-2016 16:01:56 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_comision_totales.php on line 78
+[12-Sep-2016 21:34:34 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 79
+[12-Sep-2016 21:34:34 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 80
+[12-Sep-2016 21:34:34 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 81
+[12-Sep-2016 21:34:34 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 82
+[12-Sep-2016 22:09:59 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/print_pedido_final.php on line 48
+[12-Sep-2016 22:10:06 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/view_pedido_final.php on line 73
+[12-Sep-2016 22:10:06 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/view_pedido_final.php on line 74
+[12-Sep-2016 22:10:06 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/view_pedido_final.php on line 75
+[12-Sep-2016 22:10:06 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/view_pedido_final.php on line 76
+[12-Sep-2016 22:18:58 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_comision_totales.php on line 78
+[12-Sep-2016 22:19:08 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_comision_totales.php on line 78
+[13-Sep-2016 08:18:03 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_comision_pagar.php on line 111
+[13-Sep-2016 08:25:59 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_comision_pagar.php on line 85
+[13-Sep-2016 08:25:59 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_comision_pagar.php on line 85
+[13-Sep-2016 08:25:59 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_comision_pagar.php on line 85
+[13-Sep-2016 09:35:38 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 59
+[13-Sep-2016 15:38:35 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 59
+[13-Sep-2016 15:44:29 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales.php on line 59
+[22-Sep-2016 10:12:26 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_proveetodo.php on line 93
+[22-Sep-2016 10:12:26 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_proveetodo.php on line 94
+[22-Sep-2016 10:12:26 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_proveetodo.php on line 95
+[22-Sep-2016 10:13:13 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_proveetodo.php on line 93
+[22-Sep-2016 10:13:13 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_proveetodo.php on line 94
+[22-Sep-2016 10:13:13 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_proveetodo.php on line 95
+[22-Sep-2016 10:14:27 America/Guatemala] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/technology/public_html/ST/r_finales_provee.php on line 104
