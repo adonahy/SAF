@@ -69,7 +69,7 @@ echo '
 				<ul>';
         if($v1 > 0){
             echo'
-				    <li><a class="submenu" href="manto_gastos_adici.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Pre-Orden de compras</span></a></li>';
+				    <li><a class="submenu" href="m_factura_cabecera.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Pre-Orden de compras</span></a></li>';
         }
         if($v2 > 0){
             echo'
