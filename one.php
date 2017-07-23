@@ -10,9 +10,9 @@
 	<!-- start: Meta -->
 	<meta charset="utf-8">
     <title><?php echo "$nombre_p "; ?></title>
-	<meta name="description" content="ST System">
-	<meta name="author" content="Alexander Jauregui">
-	<meta name="keyword" content="Dashboard, Admin">
+	<meta name="description" content="SAF">
+	<meta name="author" content="Mariles Rustrian">
+	
 	<!-- end: Meta -->
 	
 	<!-- start: Mobile Specific -->

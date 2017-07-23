@@ -46,12 +46,12 @@ echo '
                 ';
             if($c1 > 0){
                 echo '
-                    <li><a class="submenu" href="inscrip.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Inventario</span></a></li>';
+                    <li><a class="submenu" href="inventario.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Inventario</span></a></li>';
             }
             
             if($c3 > 0){    
         echo'
-                    <li><a class="submenu" href="manto_cxc.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Proveedores</span></a></li>';
+                    <li><a class="submenu" href="manto_proveedores.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Proveedores</span></a></li>';
             }
             
         echo'

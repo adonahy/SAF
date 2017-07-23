@@ -69,6 +69,7 @@
 								<button type="submit" class="btn btn-primary">Ingresar</button>
 							</div>
 							<div class="clearfix"></div>
+                        </fieldset>
 					</form>
 					<hr>
 					<h3>Olvidaste tu contraseña?</h3>
