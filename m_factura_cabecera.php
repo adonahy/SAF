@@ -12,34 +12,19 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>ILH System</title>
-	<meta name="description" content="ILH System">
-	<meta name="author" content="Alexander Jauregui">
-	<meta name="keyword" content="Dashboard, Admin">
+	<title>SAF</title>
+	<meta name="description" content="SAF">
+	<meta name="author" content="Mariles">
+	
 	<!-- end: Meta -->
 	
-	<!-- start: Mobile Specific -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- end: Mobile Specific -->
 	
 	<!-- start: CSS -->
 	<link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link id="base-style" href="css/style.css" rel="stylesheet">
 	<link id="base-style-responsive" href="css/style-responsive.css" rel="stylesheet">
-	<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
-	<!-- end: CSS -->
 	
-
-	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<link id="ie-style" href="css/ie.css" rel="stylesheet">
-	<![endif]-->
-	
-	<!--[if IE 9]>
-		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
-	<![endif]-->
 		
 	<!-- start: Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico">
@@ -49,302 +34,8 @@
 		
 		
 </head>
-<script type="text/javascript">    
-    function search(codigo,name,producto,pu,producto2,pu2)
-       {
-          var xmlhttp_ex;
-          var xml_producto;
-          var xml_pu;
 
-          if (window.XMLHttpRequest)
-          {// code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp_ex  =   new XMLHttpRequest();
-            xml_producto=   new XMLHttpRequest();
-            xml_pu      =   new XMLHttpRequest();
-          }
-          else
-          {// code for IE6, IE5
-            xmlhttp_ex  =   new ActiveXObject("Microsoft.XMLHTTP");
-            xml_producto=   new ActiveXObject("Microsoft.XMLHTTP");
-            xml_pu      =   new ActiveXObject("Microsoft.XMLHTTP");
-          }	
 
-          xmlhttp_ex.onreadystatechange = function() {
-            if(xmlhttp_ex.readyState == 4 && xmlhttp_ex.status == 200)
-            {
-              //document.getElementById("des").value = xmlhttp.responseText;
-                document.getElementById(name).innerHTML = xmlhttp_ex.responseText;
-            }
-          }
-          
-          xml_producto.onreadystatechange = function() {
-            if(xml_producto.readyState == 4 && xml_producto.status == 200)
-            {
-              //document.getElementById("des").value = xmlhttp.responseText;
-                document.getElementById(producto).innerHTML = xml_producto.responseText;
-                document.getElementById(producto2).value = xml_producto.responseText;
-            }
-          }
-          
-          xml_pu.onreadystatechange = function() {
-            if(xml_pu.readyState == 4 && xml_pu.status == 200)
-            {
-              //document.getElementById("des").value = xmlhttp.responseText;
-                document.getElementById(pu).innerHTML = xml_pu.responseText;
-                document.getElementById(pu2).value = xml_pu.responseText;
-            }
-          }
-
-          xmlhttp_ex.open("GET","search_ex.php?codigo="+codigo, true);
-          xmlhttp_ex.send();
-          xml_producto.open("GET","search_prod.php?codigo="+codigo, true);
-          xml_producto.send();
-          xml_pu.open("GET","search_pu.php?codigo="+codigo, true);
-          xml_pu.send();
-
-      }
-    
-    
-    function sum_tot(valor, costo, nombre) {
-        //alert("The input value has changed. The new value is: " + val);
-        //var y = ++ val;
-        var num1 = document.getElementById(costo).value;
-        var tot = valor * num1;
-
-        //  document.getElementById("tot_bi").value = tot;
-        document.getElementById(nombre).innerHTML = '<font color=\"green\">'+tot+'</font>';
-
-    }
-    
-     function suma(cantidad,total,codigo,total2)
-       {
-          var xmlhttp_total;
-          var precio;
-          var tot;
-
-          if (window.XMLHttpRequest)
-          {// code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp_total  =   new XMLHttpRequest();
-          }
-          else
-          {// code for IE6, IE5
-            xmlhttp_total  =   new ActiveXObject("Microsoft.XMLHTTP");
-          }	
-
-          xmlhttp_total.onreadystatechange = function() {
-            if(xmlhttp_total.readyState == 4 && xmlhttp_total.status == 200)
-            {
-              //document.getElementById("des").value = xmlhttp.responseText;
-              //document.getElementById(total).innerHTML = xmlhttp_total.responseText;
-                codigo = document.getElementById(codigo).value;
-                document.getElementById(total).innerHTML = xmlhttp_total.responseText;
-                document.getElementById(total2).value = xmlhttp_total.responseText;
-            }
-          }
-          
-          cod = document.getElementById(codigo).value;
-
-          xmlhttp_total.open("GET","search_pu2.php?codigo="+cod+"&can="+cantidad, true);
-          xmlhttp_total.send();
-
-      }
-    
-    function search_nit(nit)
-       {
-           var xmlhttp_tel;
-           var xmlhttp_cliente;
-           var xmlhttp_contacto;
-           var xmlhttp_facturar_a;
-           var xmlhttp_dir_fiscal;
-           var xmlhttp_dir_entrega;
-           var xmlhttp_condiciones_pago;
-           var xmlhttp_dir_transporte;
-           var id_cliente;
-
-          if (window.XMLHttpRequest)
-          {// code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp_tel                 =   new XMLHttpRequest();
-            xmlhttp_fax                 =   new XMLHttpRequest();
-            xmlhttp_cliente             =   new XMLHttpRequest();
-            xmlhttp_contacto            =   new XMLHttpRequest();
-            xmlhttp_facturar_a          =   new XMLHttpRequest();
-            xmlhttp_dir_fiscal          =   new XMLHttpRequest();
-            xmlhttp_dir_entrega         =   new XMLHttpRequest();
-            xmlhttp_condiciones_pago    =   new XMLHttpRequest();
-            xmlhttp_dir_transporte      =   new XMLHttpRequest();
-            id_cliente                  =   new XMLHttpRequest();
-          }
-          else
-          {// code for IE6, IE5
-            xmlhttp_tel                 =   new ActiveXObject("Microsoft.XMLHTTP");
-            xmlhttp_fax                 =   new ActiveXObject("Microsoft.XMLHTTP");
-            xmlhttp_cliente             =   new ActiveXObject("Microsoft.XMLHTTP");
-            xmlhttp_contacto            =   new ActiveXObject("Microsoft.XMLHTTP");
-            xmlhttp_facturar_a          =   new ActiveXObject("Microsoft.XMLHTTP");
-            xmlhttp_dir_fiscal          =   new ActiveXObject("Microsoft.XMLHTTP");
-            xmlhttp_dir_entrega         =   new ActiveXObject("Microsoft.XMLHTTP");
-            xmlhttp_condiciones_pago    =   new ActiveXObject("Microsoft.XMLHTTP");
-            xmlhttp_dir_transporte      =   new ActiveXObject("Microsoft.XMLHTTP");
-            id_cliente                  =   new ActiveXObject("Microsoft.XMLHTTP");
-          }	
-
-          xmlhttp_tel.onreadystatechange = function() {
-            if(xmlhttp_tel.readyState == 4 && xmlhttp_tel.status == 200)
-            {
-              
-                document.getElementById("tel").value = xmlhttp_tel.responseText;
-            }
-          }
-          
-          xmlhttp_cliente.onreadystatechange = function() {
-            if(xmlhttp_cliente.readyState == 4 && xmlhttp_cliente.status == 200)
-            {
-          
-                document.getElementById("cliente").value = xmlhttp_cliente.responseText;
-            }
-          }
-        
-          xmlhttp_contacto.onreadystatechange = function() {
-            if(xmlhttp_contacto.readyState == 4 && xmlhttp_contacto.status == 200)
-            {
-          
-                document.getElementById("contacto").value = xmlhttp_contacto.responseText;
-            }
-          }
-          
-          xmlhttp_facturar_a.onreadystatechange = function() {
-            if(xmlhttp_facturar_a.readyState == 4 && xmlhttp_facturar_a.status == 200)
-            {
-          
-                document.getElementById("facturar_a").value = xmlhttp_facturar_a.responseText;
-            }
-          }
-          
-          xmlhttp_dir_fiscal.onreadystatechange = function() {
-            if(xmlhttp_dir_fiscal.readyState == 4 && xmlhttp_dir_fiscal.status == 200)
-            {
-          
-                document.getElementById("dir_fiscal").value = xmlhttp_dir_fiscal.responseText;
-            }
-          }
-          
-          xmlhttp_dir_entrega.onreadystatechange = function() {
-            if(xmlhttp_dir_entrega.readyState == 4 && xmlhttp_dir_entrega.status == 200)
-            {
-          
-                document.getElementById("dir_entrega").value = xmlhttp_dir_entrega.responseText;
-            }
-          }
-          
-          xmlhttp_condiciones_pago.onreadystatechange = function() {
-            if(xmlhttp_condiciones_pago.readyState == 4 && xmlhttp_condiciones_pago.status == 200)
-            {
-          
-                document.getElementById("condiciones_pago").value = xmlhttp_condiciones_pago.responseText;
-            }
-          }
-          
-          xmlhttp_dir_transporte.onreadystatechange = function() {
-            if(xmlhttp_dir_transporte.readyState == 4 && xmlhttp_dir_transporte.status == 200)
-            {
-          
-                document.getElementById("dir_transporte").value = xmlhttp_dir_transporte.responseText;
-            }
-          }
-          
-          id_cliente.onreadystatechange = function() {
-            if(id_cliente.readyState == 4 && id_cliente.status == 200)
-            {
-          
-                document.getElementById("id_cliente").value = id_cliente.responseText;
-            }
-          }
-         
-          xmlhttp_tel.open("GET","search_nit.php?nit="+nit, true);
-          xmlhttp_tel.send();
-          xmlhttp_cliente.open("GET","search_nit2.php?nit="+nit, true);
-          xmlhttp_cliente.send();   
-          xmlhttp_contacto.open("GET","search_nit3.php?nit="+nit, true);
-          xmlhttp_contacto.send(); 
-          xmlhttp_facturar_a.open("GET","search_nit4.php?nit="+nit, true);
-          xmlhttp_facturar_a.send(); 
-          xmlhttp_dir_fiscal.open("GET","search_nit5.php?nit="+nit, true);
-          xmlhttp_dir_fiscal.send(); 
-          xmlhttp_dir_entrega.open("GET","search_nit6.php?nit="+nit, true);
-          xmlhttp_dir_entrega.send(); 
-          xmlhttp_condiciones_pago.open("GET","search_nit7.php?nit="+nit, true);
-          xmlhttp_condiciones_pago.send();
-          xmlhttp_dir_transporte.open("GET","search_nit8.php?nit="+nit, true);
-          xmlhttp_dir_transporte.send();
-          id_cliente.open("GET","search_nit9.php?nit="+nit, true);
-          id_cliente.send();
-      }
-    
-    function search_code(code)
-       {
-           var nombre_fiscal;
-           var dir_fiscal;
-           var plazo;
-           var nit;
-
-          if (window.XMLHttpRequest)
-          {// code for IE7+, Firefox, Chrome, Opera, Safari
-            nombre_fiscal       =   new XMLHttpRequest();
-            dir_fiscal          =   new XMLHttpRequest();
-            plazo               =   new XMLHttpRequest();
-            nit                 =   new XMLHttpRequest();
-          }
-          else
-          {// code for IE6, IE5
-            nombre_fiscal       =   new ActiveXObject("Microsoft.XMLHTTP");
-            dir_fiscal          =   new ActiveXObject("Microsoft.XMLHTTP");
-            plazo               =   new ActiveXObject("Microsoft.XMLHTTP");
-            nit                 =   new ActiveXObject("Microsoft.XMLHTTP");
-          }	
-
-          nombre_fiscal.onreadystatechange = function() {
-            if(nombre_fiscal.readyState == 4 && nombre_fiscal.status == 200)
-            {
-              
-                document.getElementById("nombre_cliente").value = nombre_fiscal.responseText;
-            }
-          }
-          
-          dir_fiscal.onreadystatechange = function() {
-            if(dir_fiscal.readyState == 4 && dir_fiscal.status == 200)
-            {
-              
-                document.getElementById("dir_fiscal").value = dir_fiscal.responseText;
-            }
-          }
-          
-          plazo.onreadystatechange = function() {
-            if(plazo.readyState == 4 && plazo.status == 200)
-            {
-              
-                document.getElementById("plazo").value = plazo.responseText;
-            }
-          }
-          
-          nit.onreadystatechange = function() {
-            if(nit.readyState == 4 && nit.status == 200)
-            {
-              
-                document.getElementById("nit").value = nit.responseText;
-            }
-          }
-          
-          nombre_fiscal.open("GET","search_code.php?code="+code, true);
-          nombre_fiscal.send();
-          dir_fiscal.open("GET","search_code2.php?code="+code, true);
-          dir_fiscal.send();
-          plazo.open("GET","search_code3.php?code="+code, true);
-          plazo.send();
-          nit.open("GET","search_code4.php?code="+code, true);
-          nit.send();
-      }
-    
-</script>
 <body>
 		<!-- start: Header -->
 	<div class="navbar">
@@ -355,7 +46,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.php"><span>ILH System</span></a>
+				<a class="brand" href="index.php"><span>SAF</span></a>
 								
 				<!-- start: Header Menu --> 
 				<?php
@@ -397,9 +88,8 @@
 				<li>
                     <a href="#">Ventas</a>
                     <i class="icon-angle-right"></i>
-                    <a href="manto_facturas.php">Mantenimiento de facturas</a>
-                    <i class="icon-angle-right"></i>
-                    <a href="#">Ingreso de facturas</a>
+                    <a href="manto_facturas.php">Pre-orden de Compras</a>
+                   
                 </li>
 			</ul>
                 <?php
@@ -415,9 +105,7 @@
                         $total      =   0;
                         $estatus    =   0;
                     
-                        //$u          =   "Usuario Registrado";
-                        $d          =   "Ingreso la factura: ";
-                        $t          =   "factu_principal";
+                        
                         
                         $query2     =   mysql_query("INSERT INTO `factu_principal` (`no_factura`, `serie`, `tipo_factura`, `fecha`, `id_cliente`, `pedido`, `total`, `estatus`) VALUES (NULL, '$serie', '$tipo_fac', '$fecha', '$id_cliente', '$pedido', '$total', '$estatus')");
                         
@@ -500,23 +188,7 @@
 							</div>
 							<div class="control-group">
                             <table border="0" style="width:100%">
-                                <tr>
-                                    <td>
-                                        <label class="control-label" for="codigo">CODIGO CLIENTE: </label>
-                                        <div class="controls">
-								            <input type="text" class="input-medium typeahead" id="codigo" name="codigo" onkeyup="search_code(this.value);">
-							            </div>
-                                    </td>
-                                    <td>
-                                        <label class="control-label" for="tipo_factura">TIPO FACTURA: </label>
-                                         <div class="controls">
-								            <select id="tipo_factura" name="tipo_factura" data-rel="chosen">
-									           <option value="Carta">Carta</option>
-                                               <option value="M. Carta">M. Carta</option>
-								            </select>
-								        </div>
-                                    </td>
-                                </tr>
+                                
                                 <tr>
                                     <td>
                                         <label class="control-label" for="nombre_cliente">NOMBRE CLIENTE: </label>
@@ -530,28 +202,21 @@
                                 </tr>
 							    <tr>
                                     <td>
-                                        <label class="control-label" for="dir_fiscal">DIRECCION FISCAL: </label>
+                                        <label class="control-label" for="dir_fiscal">DIRECCION: </label>
                                         <div class="controls">
 								            <input type="text" class="input-medium typeahead" id="dir_fiscal" name="dir_fiscal">
 							            </div>
                                     </td>
-                                    <td>
-                                        <label class="control-label" for="serie">SERIE: </label>
-                                         <div class="controls">
-								            <select id="serie" name="serie" data-rel="chosen">
-									           <option value="A">A</option>
-                                               <option value="B">B</option>
-                                               <option value="C">C</option>
-								            </select>
-								        </div>
-                                    </td>
+                                    
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <label class="control-label" for="plazo">PLAZO CREDITO: </label>
+                                    
+                                        <td>
+                                        <label class="control-label" for="nit">NIT: </label>
                                         <div class="controls">
-								            <input type="text" class="input-medium typeahead" id="plazo" name="plazo">
+								            <input type="text" class="input-medium typeahead" id="nit" name="nit">
 							            </div>
+                                    
                                     </td>
                                     <td>
                                         <label class="control-label" for="vendedor">VENDEDOR: </label>
@@ -574,37 +239,9 @@
 								        </div>
                                     </td>
                                 </tr>
+                                
                                 <tr>
-                                    <td>
-                                        <label class="control-label" for="nit">NIT: </label>
-                                        <div class="controls">
-								            <input type="text" class="input-medium typeahead" id="nit" name="nit">
-							            </div>
-                                    </td>
-                                    <td>
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label class="control-label" for="pedido">PEDIDO NO: </label>
-                                        <div class="controls">
-								            <select id="pedido" name="pedido" data-rel="chosen">
-									           <option value=""></option>
-                                               <?php
-                                                    $query2   =   mysql_query("SELECT `id_pedido` FROM `pedidos_cabecera` WHERE estatus_factu = 0 ORDER BY `id_pedido` DESC");
-                                      
-                                                    while($result2=mysql_fetch_array($query2)){
-                                                        $id         =   $result2['id_pedido'];
-                                                        $id_view    =   "P." . $result2['id_pedido'];
-                                                ?>
-                                                        <option value="<?php echo "$id";?>"><?php echo "$id_view";?></option>
-                                                <?php
-                                                    }
-                                                ?>
-								            </select>
-								        </div>
-                                    </td>
+                                    
                                     <td>
                                         &nbsp;
                                     </td>
@@ -664,22 +301,7 @@
 							</div>
 							<div class="control-group">
                             <table border="0" style="width:100%">
-                                <tr>
-                                    <td>
-                                        <label class="control-label" for="codigo">CODIGO CLIENTE: </label>
-                                        <div class="controls">
-								            <input disabled type="text" class="input-medium typeahead" id="codigo" name="codigo" value="<?php echo "$codigo";?>">
-							            </div>
-                                    </td>
-                                    <td>
-                                        <label class="control-label" for="tipo_factura">TIPO FACTURA: </label>
-                                         <div class="controls">
-								            <select disabled id="tipo_factura" name="tipo_factura" data-rel="chosen">
-									           <option value=""><?php echo "$tipo";?></option>
-								            </select>
-								        </div>
-                                    </td>
-                                </tr>
+                                
                                 <tr>
                                     <td>
                                         <label class="control-label" for="nombre_cliente">NOMBRE CLIENTE: </label>
@@ -698,20 +320,13 @@
 								            <input disabled type="text" class="input-medium typeahead" id="dir_fiscal" name="dir_fiscal" value="<?php echo "$dir_fiscal";?>">
 							            </div>
                                     </td>
-                                    <td>
-                                        <label class="control-label" for="serie">SERIE: </label>
-                                         <div class="controls">
-								            <select disabled id="serie" name="serie" data-rel="chosen">
-									           <option value="<?php echo "$serie";?>"><?php echo "$serie";?></option>
-								            </select>
-								        </div>
-                                    </td>
+                                    
                                 </tr>
                                 <tr>
                                     <td>
-                                        <label class="control-label" for="plazo">PLAZO CREDITO: </label>
+                                        <label class="control-label" for="nit">NIT: </label>
                                         <div class="controls">
-								            <input disabled type="text" class="input-medium typeahead" id="plazo" name="plazo" value="<?php echo "$plazo";?>">
+								            <input disabled type="text" class="input-medium typeahead" id="nit" name="nit" value="<?php echo "$nit";?>">
 							            </div>
                                     </td>
                                     <td>
@@ -724,29 +339,12 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <label class="control-label" for="nit">NIT: </label>
-                                        <div class="controls">
-								            <input disabled type="text" class="input-medium typeahead" id="nit" name="nit" value="<?php echo "$nit";?>">
-							            </div>
-                                    </td>
+                                    
                                     <td>
                                         &nbsp;
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <label class="control-label" for="pedido">PEDIDO NO: </label>
-                                        <div class="controls">
-								            <select disabled id="pedido" name="pedido" data-rel="chosen">
-									           <option value="<?php echo "$pedido";?>"><?php echo "$pedido";?></option>
-								            </select>
-								        </div>
-                                    </td>
-                                    <td>
-                                        &nbsp;
-                                    </td>
-                                </tr>
+                                
                             </table>
 							</div>
                     
@@ -754,15 +352,7 @@
 						<table class="table table-striped table-bordered bootstrap-datatable datatable">
 						  <thead>
 							  <tr>
-								  <!--
-                                  <th>CODIGO</th>
-                                  <th>DESCRIPCION</th>
-                                  <th>REFERENCIA</th>
-								  <th>CANTIDAD</th>
-                                  <th>COSTO</th>
-                                  <th>TOTAL</th>
-                                  -->
-                                  
+								                                    
                                   <th>SELECCION</th>
                                   <th>CODIGO</th>
                                   <th>CANTIDAD</th>

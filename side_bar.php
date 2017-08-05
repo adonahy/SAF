@@ -1,25 +1,21 @@
 <?php
 $query100   =   mysql_query("SELECT * FROM `permissions` WHERE user = '$u'");
 $r100       =   mysql_fetch_array($query100);
-$c          =   $r100['alumnos'];
-$c1         =   $r100['inscripciones'];
-$c2         =   $r100['pagos'];
-$c3         =   $r100['tareas'];
-$c4         =   $r100['lista_alumnos'];
-/*$c5         =   $r100['facturacion'];
-$c6         =   $r100['gadicionales'];
-$c7         =   $r100['conta_reportes'];
-$c8         =   $r100['conta_reportes_comi'];*/
+$c          =   $r100['productos'];
+$c1         =   $r100['productos_inventario'];
+$c2         =   $r100['productos_provee'];
 $ct         =   0;
-$v          =   $r100['gastos'];
-$v1         =   $r100['gastos_adicionales'];
-$v2         =   $r100['gastos_academia'];
-$v3         =   $r100['ventas_pedido'];
-/*$v4         =   $r100['ventas_pfinal'];
-$v5         =   $r100['ventas_reportes'];*/
+$v          =   $r100['ventas'];
+$v1         =   $r100['ventas_preorden'];
+$v2         =   $r100['ventas_ordencompras'];
+$v3         =   $r100['ventas_facturacion'];
+$v4         =   $r100['ventas_clientes'];
 $vt         =   0;
-$compras    =   $r100['compras'];
-$compras1   =   $r100['proveedores'];
+$compras    =   $r100['pago'];
+$compras1   =   $r100['pago_proveedores'];
+$compras2   =   $r100['pago_servicios'];
+$compras3   =   $r100['pago_cuentas'];
+$compras4   =   $r100['pago_planillas'];
 $comprast   =   0;
 $admin      =   $r100['administracion'];
 $admin1     =   $r100['admin_c_u'];
@@ -38,7 +34,7 @@ echo '
         <ul class="nav nav-tabs nav-stacked main-menu">
         ';
     if ($c > 0){ 
-        $ct=$c1+$c3 ;
+        $ct=$c1+$c2 ;
         echo '
             <li>
                 <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Productos</span></a>
@@ -49,7 +45,7 @@ echo '
                     <li><a class="submenu" href="inventario.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Inventario</span></a></li>';
             }
             
-            if($c3 > 0){    
+            if($c2 > 0){    
         echo'
                     <li><a class="submenu" href="manto_proveedores.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Proveedores</span></a></li>';
             }
@@ -62,18 +58,18 @@ echo '
 	
 	
     if ($v > 0){ 
-        $vt=$v1+$v2+$v3;
+        $vt=$v1+$v2+$v3+$v4;
     echo '
             <li>
 				<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Ventas</span></a>
 				<ul>';
         if($v1 > 0){
             echo'
-				    <li><a class="submenu" href="m_factura_cabecera.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Pre-Orden de compras</span></a></li>';
+				    <li><a class="submenu" href="m_pedidos_cabecera.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Pre-Orden de compras</span></a></li>';
         }
         if($v2 > 0){
             echo'
-				    <li><a class="submenu" href="manto_gastos_acad.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Orden de compras</span></a></li>';
+				    <li><a class="submenu" href="manto_ordenes_compra.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Orden de compras</span></a></li>';
         }
        
         if($v3 > 0){
@@ -84,15 +80,11 @@ echo '
 		}
         if($v4 > 0){
             echo'
-                    <li><a class="submenu" href="manto_pedidos_finales.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Clientes</span></a></li>
+                    <li><a class="submenu" href="manto_cliente.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Clientes</span></a></li>
                     ';
         }
         
-        /*if($v5 > 0){
-            echo'
-                    <li><a class="submenu" href="reportes_ventas.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Reportes</span></a></li>
-                    ';
-        }*/
+        
     
         echo'
 				</ul>	
@@ -101,8 +93,8 @@ echo '
     }
 	
 	
-  /* if ($compras > 0){ 
-        $comprast=$compras1;
+   if ($compras > 0){ 
+        $comprast=$compras1+$compras2+$compras3+$compras4;
     echo'
             <li>
 				<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Pagos</span><span class="label label-important"> '.$comprast.' </span></a>
@@ -121,7 +113,7 @@ echo '
         }
        if($compras4 > 0){
             echo'
-                    <li><a class="submenu" href="manto_proveedores.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Planillas</span></a></li>';
+                    <li><a class="submenu" href="planillas.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Planillas</span></a></li>';
         }
        
         echo'
@@ -129,7 +121,7 @@ echo '
             </li>';
     }
  
-*/
+
     
 if ($admin > 0){ 
         $admint=$admin1+$admin2+$admin3+$admin4+$admin5;
@@ -151,16 +143,7 @@ if ($admin > 0){
                     <li><a class="submenu" href="manto_roles.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Asignación de roles</span></a></li>
                     ';
     }
-    /*if($admin4 > 0){
-            echo'
-                    <!--<li><a class="submenu" href="logs.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Bancos</span></a></li>-->
-                    <li><a class="submenu" href="manto_bancos.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Bancos</span></a></li>
-                    ';
-    }
-    if($admin5 > 0){
-            echo'
-                    <li><a class="submenu" href="reporte_conta.php"><i class="icon-file-alt"></i><span class="hidden-tablet"> Reportes</span></a></li>';
-    }*/
+    
     echo'
 				</ul>	
             </li>';

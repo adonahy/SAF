@@ -8,10 +8,10 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title><?php echo "$nombre_p "; ?></title>
-	<meta name="description" content="ILH System">
-	<meta name="author" content="Alexander Jauregui">
-	<meta name="keyword" content="Dashboard, Admin">
+	<title>SAF</title>
+	<meta name="description" content="SAF">
+	<meta name="author" content="Mariles Rustrian">
+	
 	<!-- end: Meta -->
 	
 	<!-- start: Mobile Specific -->
@@ -23,20 +23,7 @@
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link id="base-style" href="css/style.css" rel="stylesheet">
 	<link id="base-style-responsive" href="css/style-responsive.css" rel="stylesheet">
-	<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
-	<!-- end: CSS -->
 	
-
-	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<link id="ie-style" href="css/ie.css" rel="stylesheet">
-	<![endif]-->
-	
-	<!--[if IE 9]>
-		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
-	<![endif]-->
-		
 	<!-- start: Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<!-- end: Favicon -->
@@ -46,55 +33,7 @@
 		
 </head>
     
-<script>
-    function todas(){
-    
-        document.getElementById('conta2').checked = !document.getElementById('conta2').checked;
-        
-   
-    }
-    
-    function alumnos() {
 
-        document.f1.inscripcion.click();
-        document.f1.pago.click();
-        document.f1.tarea.click();
-        document.f1.lista_alumnos.click();
-        /*document.f1.factu.click();
-        document.f1.gadicionales.click();
-		document.f1.reportef.click();*/
-      
-				
-
-    }
-    
-    function gastos() {
-    
-        document.f1.gadicionales.click();
-        document.f1.gacademia.click();
-        /*document.f1.pedidos.click();
-        document.f1.pfinales.click();
-        document.f1.reportev.click();*/
-    }
-
-   /* function Compras() {
-    
-        document.f1.proveedores.click();
-      
-    }*/
-    
-    
-    
-     function Admin() {
-    
-        document.f1.creacionusuarios.click();
-        document.f1.eliminacionusuarios.click();
-        document.f1.aroles.click();
-        document.f1.bancos.click();
-        document.f1.admin_r.click();
-
-    }
-</script>
     
 <body>
 		<!-- start: Header -->
@@ -106,7 +45,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.php"><span><?php echo "$nombre_p "; ?></span></a>
+				<a class="brand" href="index.php"><span>SAF</span></a>
 								
 				<!-- start: Header Menu --> 
 		<?php
@@ -168,33 +107,30 @@
                                 $r2      =   mysql_fetch_array($query2);
                                 
                                                 
-                                $alumno             =   $r2['alumnos'];
-                                $inscripcion        =   $r2['inscripciones'];
-                                $pago               =   $r2['pagos'];
-                                $tarea              =   $r2['tareas'];
-								$lista_alum         =   $r2['lista_alumnos'];
-                               /* $facturacion        =   $_POST['factu'];
-                                $gadicionales       =   $_POST['gadicionales'];
-                                $conta_reportes     =   $_POST['reportef'];*/
-                                
-                                $gastos             =   $r2['gastos'];
-                                $gastos_adicionales =   $r2['gastos_adicionales'];
-                                $gastos_academia    =   $r2['gastos_academia'];
-                                /*$ventas_pedido      =   $_POST['pedidos'];
-                                $ventas_pedidofinal =   $_POST['pfinales'];
-                                $ventas_reportes    =   $_POST['reportev'];
+                                $productos             =   $r2['productos'];
+                                $inventario            =   $r2['productos_inventario'];
+                                $proveed               =   $r2['productos_provee'];
                                 
                                 
-                                $compras            =   $_POST['compras'];
-                                $compras_mproveedores=  $_POST['proveedores'];*/
+                                $ventas             =   $r2['ventas'];
+                                $preorden           =   $r2['ventas_preorden'];
+                                $ordencompras       =   $r2['ventas_ordencompras'];
+                                $factura            =   $r2['ventas_facturacion'];
+                                $clientes           =   $r2['ventas_clientes'];
+                                                            
+                                
+                                $pagos              =  $r2['pago'];
+                                $provee             =  $r2['pago_proveedores'];
+                                $servicios          =  $r2['pago_servicios'];
+                                $cuentas            =  $r2['pago_cuentas'];
+                                $planilla           =  $r2['pago_planilla'];
                               
                                 
                                 $admin              =   $r2['administracion'];
                                 $admin_cu           =   $r2['admin_c_u'];
                                 $admin_eu           =   $r2['admin_e_u'];
                                 $admin_ar           =   $r2['admin_ar'];
-                                $bancos             =   $r2['admin_bancos'];
-                                $admin_reportes     =   $r2['admin_reportes'];
+                                
                                 
                             }
                             
@@ -203,41 +139,36 @@
                                 
                                 $us                 =   $_POST['usuar'];
                                 
-                                $alumno             =   $_POST['alumno'];
-                                $inscripcion        =   $_POST['inscripcion'];
-                                $pago               =   $_POST['pago'];
-                                $tarea              =   $_POST['tarea'];
-								$lista_alum         =   $_POST['lista_alumnos'];
-                               /* $facturacion        =   $_POST['factu'];
-                                $gadicionales       =   $_POST['gadicionales'];
-                                $conta_reportes     =   $_POST['reportef'];*/
+                                $productos          =   $_POST['produc'];
+                                $inventario         =   $_POST['inven'];
+                                $proveed            =   $_POST['provee'];
                                 
-                                $gastos             =   $_POST['gasto'];
-                                $gastos_adicionales =   $_POST['gadicionales'];
-                                $gastos_academia    =   $_POST['gacademia'];
-                                /*$ventas_pedido      =   $_POST['pedidos'];
-                                $ventas_pedidofinal =   $_POST['pfinales'];
-                                $ventas_reportes    =   $_POST['reportev'];
+                               
+                                
+                                $ventas             =   $_POST['ventas'];
+                                $preorden           =   $_POST['preorden'];
+                                $ordencompras       =   $_POST['ordencompras'];
+                                $factura            =   $_POST['factu'];
+                                $clientes           =   $_POST['clientes'];
                                 
                                 
-                                $compras            =   $_POST['compras'];
-                                $compras_mproveedores=  $_POST['proveedores'];*/
+                                
+                                $pagos              =   $_POST['pagos'];
+                                $provee             =   $_POST['proveedores'];
+                                $servicios          =   $_POST['servicios'];
+                                $cuentas            =   $_POST['cuentas'];
+                                $planilla           =   $_POST['planilla'];
                               
                                 
                                 $admin              =   $_POST['admin'];
                                 $admin_cu           =   $_POST['creacionusuarios'];
                                 $admin_eu           =   $_POST['eliminacionusuarios'];
                                 $admin_ar           =   $_POST['aroles'];
-                                $bancos             =   $_POST['bancos'];
-                                $admin_reportes     =   $_POST['admin_r'];
                                 
-                                $query1 =   mysql_query("UPDATE `permissions` SET `alumnos` = '$alumno', `inscripciones` = '$inscripcion', `pagos` = '$pago', `tareas` = '$tarea', `lista_alumnos` = '$lista_alum', `gastos` = '$gastos', `gastos_adicionales` = '$gastos_adicionales', `gastos_academia` = '$gastos_academia', `administracion` = '$admin', `admin_c_u` = '$admin_cu', `admin_e_u` = '$admin_eu', `admin_ar` = '$admin_ar', `admin_bancos` = '$bancos', `admin_reportes` = '$admin_reportes' WHERE `permissions`.`user` = '$us'");
                                 
-                                $de="Se editaron los permisos del usuario: ";
-                                $t="permissions";
-                                //echo "$u, $p, $d";
-                                //register_user($u, $p, $d);
-                                insert_logs($da, $u, $de, $t, $us);
+                                $query1 =   mysql_query("UPDATE `permissions` SET `productos`='$productos',`productos_inventario`='$inventario',`productos_provee`='$proveed',`ventas`='$ventas',`ventas_preorden`='$preorden',`ventas_ordencompras`='$ordencompras',`ventas_facturacion`='$factura',`ventas_clientes`='$clientes',`pago`='$pagos',`pago_proveedores`='$provee',`pago_servicios`='$servicios',`pago_cuentas`='$cuentas',`pago_planillas`='$planilla',`administracion`='$admin',`admin_c_u`='$admin_cu',`admin_e_u`='$admin_eu',`admin_ar`='$admin_ar' WHERE `permissions`.`user` = '$us'");
+                                
+                               
                                 echo "<h3>Los permisos del usuario han sido editados!</h3>";
                             } else {
                                 //echo "<h3>" . output_errors($errors) . "</h3><br>";
@@ -263,72 +194,71 @@
 								<label class="control-label">Permisos:</label>
                                   <table class="controls" width="60%" border="0"><!-- inicia tabla de ordenamiento para los permisos -->
                                       <tr>
-                                          <!--<td width="13%">$codigo</td>
-                                          <td height="5" style="font-size:6px">&nbsp;</td>-->
+                                          
                                           <th width="32%" align="center">
                                               <?php
-                                                if($alumno > 0){
+                                                if($productos > 0){
                                               ?>
-                                            <input type="checkbox" onclick="alumnos();" id="alumno" name="alumno" value="1" checked> Alumnos
+                                            <input type="checkbox" id="produc" name="produc" value="1" checked> Productos
                                                 <?php
                                                 }else{
                                                 ?>
-                                            <input type="checkbox" onclick="alumnos();" id="alumno" name="alumno" value="1"> Alumnos
+                                            <input type="checkbox" id="produc" name="produc" value="1"> Productos
                                               <?php } ?>
-                                          </td>
+                                          </th>
                                           <th width="36%" align="center">
                                             
                                                <?php
-                                                if($gastos > 0){
+                                                if($ventas > 0){
                                               ?>
-                                            <input type="checkbox" onclick="gastos();" id="gasto" name="gasto" value="1" checked> Gastos
+                                            <input type="checkbox" id="ventas" name="ventas" value="1" checked> Ventas
                                                 <?php
                                                 }else{
                                                 ?>
-                                            <input type="checkbox" onclick="gastos();" id="gasto" name="gasto" value="1"> Gastos
+                                            <input type="checkbox" id="ventas" name="ventas" value="1"> Ventas
                                               <?php } ?>
-                                          </td>
-                                          <!--<th width="32%" align="center">
+                                          </th>
+                                          <th width="32%" align="center">
                                             
                                                <?php
-                                                if($compras > 0){
+                                                if($pagos > 0){
                                               ?>
-                                            <input type="checkbox" onclick="Compras();" id="compras" name="compras" value="1" checked> Compras
+                                            <input type="checkbox" id="pagos" name="pagos" value="1" checked> Pagos
                                                 <?php
                                                 }else{
                                                 ?>
-                                            <input type="checkbox" onclick="Compras();" id="compras" name="compras" value="1"> Compras
+                                            <input type="checkbox" id="pagos" name="pagos" value="1"> Pagos
                                               <?php } ?>
-                                          </td>-->
+                                          </th>
                                       </tr>
                                       <tr>
                                           <td width="33%" align="left">
                                             
                                                <?php
-                                                if($inscripcion > 0){
+                                                if($inventario > 0){
                                               ?>
-                                            <input type="checkbox" id="inscripcion" name="inscripcion" value="1" checked> Inscripciones
+                                            <input type="checkbox" id="inven" name="inven" value="1" checked> Inventario
                                                 <?php
                                                 }else{
                                                 ?>
-                                            <input type="checkbox" id="inscripcion" name="inscripcion" value="1"> Inscripciones
+                                            <input type="checkbox" id="inven" name="inven" value="1"> Inventario
                                               <?php } ?>
                                           </td>
                                           <td width="33%" align="left" >
                                             
                                               <?php
-                                                if($gastos_adicionales > 0){
+                                                if($preorden > 0){
                                               ?>
-                                            <input type="checkbox" id="gadicionales" name="gadicionales" value="1" checked> Gastos Adicionales
+                                            <input type="checkbox" id="preorden" name="preorden" value="1" checked> Pre-orden
                                                 <?php
                                                 }else{
                                                 ?>
-                                            <input type="checkbox" id="gadicionales" name="gadicionales" value="1" > Gastos Adicionales
+                                            <input type="checkbox" id="preorden" name="preorden" value="1" > Pre-orden
                                               <?php } ?>
                                           </td>
-                                         <!-- <td width="34%" align="left">
+                                         <td width="34%" align="left">
                                               <?php
-                                                if($compras_mproveedores > 0){
+                                                if($provee > 0){
                                               ?>
                                             <input type="checkbox" id="proveedores" name="proveedores" value="1" checked> Proveedores
                                                 <?php
@@ -336,102 +266,54 @@
                                                 ?>
                                             <input type="checkbox" id="proveedores" name="proveedores" value="1"> Proveedores
                                               <?php } ?>
-                                          </td>-->
+                                          </td>
                                       </tr>
                                       <tr>
                                           <td width="33%" align="left">
                                             
                                               <?php
-                                                if($pago > 0){
+                                                if($proveed > 0){
                                               ?>
-                                            <input type="checkbox" id="pago" name="pago" value="1" checked> Pagos
+                                            <input type="checkbox" id="provee" name="provee" value="1" checked> Proveedores
                                                 <?php
                                                 }else{
                                                 ?>
-                                            <input type="checkbox" id="pago" name="pago" value="1"> Pagos
+                                            <input type="checkbox" id="provee" name="provee" value="1"> Proveedores
                                               <?php } ?>
                                           </td>
                                           <td width="33%" align="left" >
                                             
                                               <?php
-                                                if($gastos_academia > 0){
+                                                if($ordencompras > 0){
                                               ?>
-                                            <input type="checkbox" id="gacademia" name="gacademia" value="1" checked> Gastos de Academia
+                                            <input type="checkbox" id="ordencompras" name="ordencompras" value="1" checked> Orden de compras
                                                 <?php
                                                 }else{
                                                 ?>
-                                            <input type="checkbox" id="gacademia" name="gacademia" value="1"> Gastos de Academia
+                                            <input type="checkbox" id="ordencompras" name="ordencompras" value="1"> Orden de compras
                                               <?php } ?>
                                           </td>
                                           <td width="34%" align="left">
-                                            
-                                             &nbsp; 
+                                            <?php
+                                                if($servicios > 0){
+                                              ?>
+                                            <input type="checkbox" id="servicios" name="servicios" value="1" checked> Servicios
+                                                <?php
+                                                }else{
+                                                ?>
+                                            <input type="checkbox" id="servicios" name="servicios" value="1"> Servicios
+                                              <?php } ?>
                                           </td>
                                       </tr>
                                       <tr>
                                           <td width="33%" align="left">
-                                            
-                                              <?php
-                                                if($tarea > 0){
-                                              ?>
-                                            <input type="checkbox" id="tarea" name="tarea" value="1" checked> Tareas
-                                                <?php
-                                                }else{
-                                                ?>
-                                            <input type="checkbox" id="tarea" name="tarea" value="1"> Tareas
-                                              <?php } ?>
-                                          </td>
-                                         <!-- <td width="33%" align="left" >
-                                            
-                                              <?php
-                                                if($ventas_pedido > 0){
-                                              ?>
-                                            <input type="checkbox" id="pedidos" name="pedidos" value="1" checked> Pedidos
-                                                <?php
-                                                }else{
-                                                ?>
-                                            <input type="checkbox" id="pedidos" name="pedidos" value="1"> Pedidos
-                                              <?php } ?>
-                                          </td>-->
-                                          <td width="34%" align="left">
                                             &nbsp; 
-											  
+                                              
                                           </td>
-                                      </tr>
-                                      <tr>
-                                          <td width="33%" align="left">
+                                         <td width="33%" align="left" >
                                             
                                               <?php
-                                                if($lista_alum > 0){
-                                              ?>
-                                            <input type="checkbox" id="lista_alumnos" name="lista_alumnos" value="1" checked> Lista de Alumnos
-                                                <?php
-                                                }else{
-                                                ?>
-                                            <input type="checkbox" id="lista_alumnos" name="lista_alumnos" value="1"> Lista de Alumnos
-                                              <?php } ?>
-                                          </td>
-                                          <!--<td width="33%" align="left" >
-                                            
-                                              <?php
-                                                if($ventas_pedidofinal > 0){
-                                              ?>
-                                            <input type="checkbox" id="pfinales" name="pfinales" value="1" checked> Pedidos finales
-                                                <?php
-                                                }else{
-                                                ?>
-                                            <input type="checkbox" id="pfinales" name="pfinales" value="1"> Pedidos finales
-                                              <?php } ?>
-                                          </td>
-                                          <td width="34%" align="left">
-                                            &nbsp;
-                                          </td>-->
-                                      </tr>
-                                      <!--<tr>
-                                          <td width="33%" align="left">
-                                            
-                                               <?php
-                                                if($facturacion > 0){
+                                                if($factura > 0){
                                               ?>
                                             <input type="checkbox" id="factu" name="factu" value="1" checked> Facturación
                                                 <?php
@@ -440,81 +322,50 @@
                                             <input type="checkbox" id="factu" name="factu" value="1"> Facturación
                                               <?php } ?>
                                           </td>
-                                          <td width="33%" align="left" >
+                                          <td width="34%" align="left">
                                             
-                                               <?php
-                                                if($ventas_reportes > 0){
+                                              <?php
+                                                if($cuentas > 0){
                                               ?>
-                                            <input type="checkbox" id="reportev" name="reportev" value="1" checked> Reportes
+                                            <input type="checkbox" id="cuentas" name="cuentas" value="1" checked> Cuentas
                                                 <?php
                                                 }else{
                                                 ?>
-                                            <input type="checkbox" id="reportev" name="reportev" value="1"> Reportes
-                                              <?php } ?>
-                                          </td>
-                                          <td width="34%" align="left">
-                                            &nbsp;
+                                            <input type="checkbox" id="cuentas" name="cuentas" value="1"> Cuentas
+                                              <?php } ?> 
+											  
                                           </td>
                                       </tr>
                                       <tr>
                                           <td width="33%" align="left">
                                             
-                                               <?php
-                                                if($gadicionales > 0){
-                                              ?>
-                                            <input type="checkbox" id="gadicionales" name="gadicionales" value="1" checked> Gastos adicionales
-                                                <?php
-                                                }else{
-                                                ?>
-                                            <input type="checkbox" id="gadicionales" name="gadicionales" value="1"> Gastos adicionales
-                                              <?php } ?>
+                                              &nbsp;
                                           </td>
                                           <td width="33%" align="left" >
-                                            &nbsp;
-                                          </td>
-                                          <td width="34%" align="left">
-                                            &nbsp;
-                                          </td>
-                                      </tr>
-							          <tr>
-                                          <td width="33%" align="left">
-                                            
-                                               <?php
-                                                if($conta_reportes > 0){
-                                              ?>
-                                            <input type="checkbox" id="reportef" name="reportef" value="1" checked> Reportes
-                                                <?php
-                                                }else{
-                                                ?>
-                                            <input type="checkbox" id="reportef" name="reportef" value="1"> Reportes
-                                              <?php } ?>
-                                          </td>
-                                          <td width="33%" align="left" >
-                                            &nbsp;
-                                          </td>
-                                          <td width="34%" align="left">
-                                            &nbsp;
-                                          </td>
-                                      </tr>
-                                      <tr>
-                                          <td width="33%" align="left">
                                             <?php
-                                                if($conta_reportes_comi > 0){
+                                              if($clientes > 0){
                                               ?>
-                                            <input type="checkbox" id="reportec" name="reportec" value="1" checked> Reportes de comisión
+                                            <input type="checkbox" id="clientes" name="clientes" value="1" checked> Clientes
                                                 <?php
                                                 }else{
                                                 ?>
-                                            <input type="checkbox" id="reportec" name="reportec" value="1"> Reportes de comisión
-                                              <?php } ?>
-                                          </td>
-                                          <td width="33%" align="left" >
-                                            &nbsp;
+                                            <input type="checkbox" id="clientes" name="clientes" value="1"> Clientes
+                                              <?php } ?> 
+                                            
                                           </td>
                                           <td width="34%" align="left">
-                                            &nbsp;
+                                            <?php
+                                                if($planilla > 0){
+                                              ?>
+                                            <input type="checkbox" id="planilla" name="planilla" value="1" checked> Planillas
+                                                <?php
+                                                }else{
+                                                ?>
+                                            <input type="checkbox" id="planilla" name="planilla" value="1"> Planillas
+                                              <?php } ?> 
                                           </td>
-                                      </tr>-->
+                                      </tr>
+                                      
                             
                                       <tr>
                                           <td width="33%" align="left">
@@ -538,14 +389,14 @@
                                                 ?>
                                             <input type="checkbox" onclick="Admin();" id="admin" name="admin" value="1"> Administración
                                               <?php } ?>
-                                          </td>
+                                          </th>
                                            &nbsp;
                                           <th width="33%">
                                             
-                                          </td>
+                                          </th>
                                           <th width="34%">
                                            &nbsp;
-                                          </td>
+                                          </th>
                                       </tr>
                                       <tr>
                                           <td width="33%" align="left">
@@ -611,55 +462,8 @@
                                               
                                           </td>
                                       </tr>
-                                      <tr>
-                                          <td width="33%" align="left">
-                                          
-                                               <?php
-                                              if($bancos > 0){
-                                              ?>
-                                            <input type="checkbox" id="bancos" name="bancos" value="1" checked> Bancos
-                                                <?php
-                                                }else{
-                                                ?>
-                                            <input type="checkbox" id="bancos" name="bancos" value="1"> Bancos
-                                              <?php } ?>
-											  
-											  
-											  
-                                          </td>
-                                          <td width="33%" align="left" >
-                                            
-                                              &nbsp;  
-                                          </td>
-                                          <td width="34%" align="left">
-                                            
-                                                &nbsp;
-                                          </td>
-                                      </tr>
-                                      <tr>
-                                          <td width="33%" align="left">
-                                           <?php
-                                              if($admin_reportes > 0){
-                                              ?>
-                                            <input type="checkbox" id="admin_r" name="admin_r" value="1" checked> Reportes
-                                                <?php
-                                                }else{
-                                                ?>
-                                            <input type="checkbox" id="admin_r" name="admin_r" value="1"> Reportes
-                                              <?php } ?>
-											  
-											  
-											  
-                                          </td>
-                                          <td width="33%" align="left" >
-                                            &nbsp;
-                                             
-                                          </td>
-                                          <td width="34%" align="left">
-                                            &nbsp;
-                                              
-                                          </td>
-                                      </tr>
+                                      
+                                      
                                   </table>
 							  </div>
                               

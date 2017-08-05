@@ -8,10 +8,10 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Academia San Jose</title>
-	<meta name="description" content="ILH System">
-	<meta name="author" content="Alexander Jauregui">
-	<meta name="keyword" content="Dashboard, Admin">
+	<title>SAF</title>
+	<meta name="description" content="SAF">
+	<meta name="author" content="Mariles Rustrian">
+	
 	<!-- end: Meta -->
 	
 	<!-- start: Mobile Specific -->
@@ -23,20 +23,7 @@
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link id="base-style" href="css/style.css" rel="stylesheet">
 	<link id="base-style-responsive" href="css/style-responsive.css" rel="stylesheet">
-	<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
-	<!-- end: CSS -->
 	
-
-	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<link id="ie-style" href="css/ie.css" rel="stylesheet">
-	<![endif]-->
-	
-	<!--[if IE 9]>
-		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
-	<![endif]-->
-		
 	<!-- start: Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<!-- end: Favicon -->
@@ -46,55 +33,6 @@
 		
 </head>
     
-<script>
-    function todas(){
-    
-        document.getElementById('conta2').checked = !document.getElementById('conta2').checked;
-        
-   
-    }
-    
-    function alumnos() {
-
-        document.f1.inscripcion.click();
-        document.f1.pago.click();
-        document.f1.tarea.click();
-        document.f1.lista_alumnos.click();
-        /*document.f1.factu.click();
-        document.f1.gadicionales.click();
-		document.f1.reportef.click();*/
-      
-				
-
-    }
-    
-    function gastos() {
-    
-        document.f1.gadicionales.click();
-        document.f1.gacademia.click();
-        /*document.f1.pedidos.click();
-        document.f1.pfinales.click();
-        document.f1.reportev.click();*/
-    }
-
-   /* function Compras() {
-    
-        document.f1.proveedores.click();
-      
-    }*/
-    
-    
-    
-     function Admin() {
-    
-        document.f1.creacionusuarios.click();
-        document.f1.eliminacionusuarios.click();
-        document.f1.aroles.click();
-        document.f1.bancos.click();
-        document.f1.admin_r.click();
-
-    }
-</script>
     
 <body>
 		<!-- start: Header -->
@@ -106,7 +44,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.php"><span>Academia San José</span></a>
+				<a class="brand" href="index.php"><span>SAF</span></a>
 								
 				<!-- start: Header Menu --> 
 		<?php
@@ -163,41 +101,36 @@
                                 
                                 $us                 =   $_POST['usuar'];
                                 
-                                $alumno             =   $_POST['alumno'];
-                                $inscripcion        =   $_POST['inscripcion'];
-                                $pago               =   $_POST['pago'];
-                                $tarea              =   $_POST['tarea'];
-								$lista_alum         =   $_POST['lista_alumnos'];
-                               /* $facturacion        =   $_POST['factu'];
-                                $gadicionales       =   $_POST['gadicionales'];
-                                $conta_reportes     =   $_POST['reportef'];*/
+                                $productos          =   $_POST['produc'];
+                                $inventario         =   $_POST['inven'];
+                                $proveed            =   $_POST['provee'];
                                 
-                                $gastos             =   $_POST['gasto'];
-                                $gastos_adicionales =   $_POST['gadicionales'];
-                                $gastos_academia    =   $_POST['gacademia'];
-                                /*$ventas_pedido      =   $_POST['pedidos'];
-                                $ventas_pedidofinal =   $_POST['pfinales'];
-                                $ventas_reportes    =   $_POST['reportev'];
+                               
+                                
+                                $ventas             =   $_POST['ventas'];
+                                $preorden           =   $_POST['preorden'];
+                                $ordencompras       =   $_POST['ordencompras'];
+                                $factura            =   $_POST['factu'];
+                                $clientes           =   $_POST['clientes'];
                                 
                                 
-                                $compras            =   $_POST['compras'];
-                                $compras_mproveedores=  $_POST['proveedores'];*/
+                                
+                                $pagos              =   $_POST['pagos'];
+                                $provee             =   $_POST['proveedores'];
+                                $servicios          =   $_POST['servicios'];
+                                $cuentas            =   $_POST['cuentas'];
+                                $planilla           =   $_POST['planilla'];
                               
                                 
                                 $admin              =   $_POST['admin'];
                                 $admin_cu           =   $_POST['creacionusuarios'];
                                 $admin_eu           =   $_POST['eliminacionusuarios'];
                                 $admin_ar           =   $_POST['aroles'];
-                                $bancos             =   $_POST['bancos'];
-                                $admin_reportes     =   $_POST['admin_r'];
                                 
-                                $query1 =   mysql_query("INSERT INTO `permissions` (`user`, `alumnos`, `inscripciones`, `pagos`, `tareas`, `lista_alumnos`, `gastos`, `gastos_adicionales`, `gastos_academia`, `administracion`, `admin_c_u`, `admin_e_u`, `admin_ar`, `admin_bancos`, `admin_reportes`) VALUES ('$us', '$alumno', '$inscripcion', '$pago', '$tarea', '$lista_alum', '$gastos', '$gastos_adicionales', '$gastos_academia', '$admin', '$admin_cu', '$admin_eu', '$admin_ar', '$bancos', '$admin_reportes')");
+                                                      
+                                $query1 =   mysql_query("INSERT INTO `permissions` (`user`, `productos`, `productos_inventario`, `productos_provee`, `ventas`, `ventas_preorden`, `ventas_ordencompras`, `ventas_facturacion`, `ventas_clientes`, `pago`, `pago_proveedores`, `pago_servicios`, `pago_cuentas`, `pago_planillas`, `administracion`, `admin_c_u`, `admin_e_u`, `admin_ar`) VALUES ('$us', '$productos', '$inventario', '$proveed', '$ventas', '$preorden', '$ordencompras', '$factura', '$clientes', '$pagos','$provee','$servicios','$cuentas','$planilla','$admin', '$admin_cu', '$admin_eu', '$admin_ar')");
                                 
-                                $de="Se cambiaron los permisos del usuario: ";
-                                $t="permissions";
-                                //echo "$u, $p, $d";
-                                //register_user($u, $p, $d);
-                                insert_logs($da, $u, $de, $t, $us);
+                                
                                 echo "<h3>Los permisos del usuario han sido guardados!</h3>";
                             } else {
                                 //echo "<h3>" . output_errors($errors) . "</h3><br>";
@@ -235,93 +168,60 @@
                                           <!--<td width="13%">$codigo</td>
                                           <td height="5" style="font-size:6px">&nbsp;</td>-->
                                           <th width="32%" align="center">
-                                            <input type="checkbox" onclick="alumnos();" id="alumno" name="alumno" value="1"> Alumnos
+                                            <input type="checkbox" id="produc" name="produc" value="1"> Productos
                                 
-                                          </td>
+                                          </th>
                                           <th width="36%" align="center">
-                                            <input type="checkbox" onclick="gastos();" id="gasto" name="gasto" value="1"> Gastos
-                                          </td>
-                                         <!-- <th width="32%" align="center">
-                                            <input type="checkbox" onclick="Compras();" id="compras" name="compras" value="1"> Compras
-                                          </td>-->
+                                            <input type="checkbox" id="ventas" name="ventas" value="1"> Ventas
+                                          </th>
+                                          <th>
+                                         <input type="checkbox" id="pagos" name="pagos" value="1"> Pagos
+                                          </th>
                                       </tr>
                                       <tr>
                                           <td width="33%" align="left">
-                                            <input type="checkbox" id="inscripcion" name="inscripcion" value="1"> Inscripciones
+                                            <input type="checkbox" id="inven" name="inven" value="1"> Inventario
                                           </td>
                                           <td width="33%" align="left" >
-                                            <input type="checkbox" id="gadicionales" name="gadicionales" value="1" > Gastos Adicionales
-                                          </td>
-                                          <!--<td width="34%" align="left">
-                                            <input type="checkbox" id="proveedores" name="proveedores" value="1"> Mantenimiento Proveedores
-                                          </td>-->
-                                      </tr>
-                                      <tr>
-                                          <td width="33%" align="left">
-                                            <input type="checkbox" id="pago" name="pago" value="1"> Pagos
-                                          </td>
-                                          <td width="33%" align="left" >
-                                            <input type="checkbox" id="gacademia" name="gacademia" value="1"> Gastos de Academia
+                                             <input type="checkbox" id="preorden" name="preorden" value="1" > Pre-orden
                                           </td>
                                           <td width="34%" align="left">
-                                           &nbsp;
+                                            <input type="checkbox" id="proveedores" name="proveedores" value="1"> Proveedores
                                           </td>
                                       </tr>
                                       <tr>
                                           <td width="33%" align="left">
-                                            <input type="checkbox" id="tarea" name="tarea" value="1"> Tareas
+                                            <input type="checkbox" id="provee" name="provee" value="1"> Proveedores
                                           </td>
-                                         <!-- <td width="33%" align="left" >
-                                            <input type="checkbox" id="pedidos" name="pedidos" value="1"> Pedidos
+                                          <td width="33%" align="left" >
+                                            <input type="checkbox" id="ordencompras" name="ordencompras" value="1"> Orden de compras
                                           </td>
-                                          <td width="34%" align="left">-->
-                                            &nbsp;
+                                          <td width="34%" align="left">
+                                           <input type="checkbox" id="servicios" name="servicios" value="1"> Servicios
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td width="33%" align="left">
+                                             &nbsp;
+                                          </td>
+                                          <td width="33%" align="left" >
+                                            <input type="checkbox" id="factu" name="factu" value="1"> Facturación
+                                          </td>
+                                          <td width="34%" align="left">
+                                            <input type="checkbox" id="cuentas" name="cuentas" value="1"> Cuentas
                                           </td>
                                       </tr>
                                      <tr>
                                           <td width="33%" align="left">
-                                            <input type="checkbox" id="lista_alumnos" name="lista_alumnos" value="1"> Lista de Alumnos
-                                          </td>
-                                          <!--<td width="33%" align="left" >
-                                            <input type="checkbox" id="pfinales" name="pfinales" value="1"> Pedidos finales
-                                          </td>
-                                          <td width="34%" align="left">
                                             &nbsp;
-                                          </td>
-                                      </tr>-->
-                                     <!-- <tr>
-                                          <td width="33%" align="left">
-                                            <input type="checkbox" id="factu" name="factu" value="1"> Facturación
                                           </td>
                                           <td width="33%" align="left" >
-                                            <input type="checkbox" id="reportev" name="reportev" value="1"> Reportes
+                                            <input type="checkbox" id="clientes" name="clientes" value="1"> Clientes
                                           </td>
                                           <td width="34%" align="left">
-                                            &nbsp;
+                                            <input type="checkbox" id="planilla" name="planilla" value="1"> Planillas
                                           </td>
                                       </tr>
-                                      <tr>
-                                          <td width="33%" align="left">
-                                            <input type="checkbox" id="gadicionales" name="gadicionales" value="1"> Gastos adicionales
-                                          </td>
-                                          <td width="33%" align="left" >
-                                            &nbsp;
-                                          </td>
-                                          <td width="34%" align="left">
-                                            &nbsp;
-                                          </td>
-                                      </tr>
-							           <tr>
-                                          <td width="33%" align="left">
-                                            <input type="checkbox" id="reportef" name="reportef" value="1"> Reportes
-                                          </td>
-                                          <td width="33%" align="left" >
-                                            &nbsp;
-                                          </td>
-                                          <td width="34%" align="left">
-                                            &nbsp;
-                                          </td>
-                                      </tr>-->
                                       <tr>
                                           <td width="33%" align="left">
                                            
@@ -336,13 +236,13 @@
                                       <tr>
                                           <th width="33%">
                                              <input type="checkbox" onclick="Admin();" id="admin" name="admin" value="1"> Administración
-                                          </td>
+                                          </th>
                                           <th width="33%">
                                              &nbsp;
-                                          </td>
+                                          </th>
                                           <th width="34%">
                                             &nbsp;
-                                          </td>
+                                          </th>
                                       </tr>
                                       <tr>
                                           <td width="33%" align="left">
@@ -377,28 +277,7 @@
                                             &nbsp;
                                           </td>
                                       </tr>
-                                      <tr>
-                                          <td width="33%" align="left">
-                                           <input type="checkbox" id="bancos" name="bancos" value="1"> Bancos
-                                          </td>
-                                          <td width="33%" align="left" >
-                                           &nbsp;
-                                          </td>
-                                          <td width="34%" align="left">
-                                           &nbsp;
-                                          </td>
-                                      </tr>
-                                      <tr>
-                                          <td width="33%" align="left">
-                                             <input type="checkbox" id="admin_r" name="admin_r" value="1"> Reportes
-                                          </td>
-                                          <td width="33%" align="left" >
-                                               &nbsp;
-                                          </td>
-                                          <td width="34%" align="left">
-                                              &nbsp;
-                                          </td>
-                                      </tr>
+                                      
                                   </table>
 							  </div>
                               
